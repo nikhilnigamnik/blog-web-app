@@ -18,6 +18,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// home route
+
+app.get("/", (req, res) => {
+    res.send("API is running");
+})
+
 // use router
 
 app.use("/api/user", userRoutes);
