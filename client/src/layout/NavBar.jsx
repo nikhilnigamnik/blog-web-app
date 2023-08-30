@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import Search from "../components/Search";
 
 const menuItems = [
   {
@@ -36,10 +37,10 @@ export function NavBar() {
   };
 
   return (
-    <div className="relative w-full bg-white border py-3">
+    <div className="top-0 right-0 left-0 text-white w-full fixed  py-3 bg-primary border-b border-border z-10 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
-          <span className="font-bold">NEBULA</span>
+          <span className="font-bold ">NEBULA</span>
         </div>
         <div className="hidden grow items-start lg:flex">
           <ul className="ml-12 inline-flex space-x-8">
@@ -47,7 +48,7 @@ export function NavBar() {
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+                  className="inline-flex items-center text-sm font-semibold  hover:text-gray-300"
                 >
                   {item.name}
                 </a>
@@ -55,16 +56,17 @@ export function NavBar() {
             ))}
           </ul>
         </div>
+        <Search />
         <div className="hidden space-x-2 lg:block">
           <button
             type="button"
-            className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
           >
             Sign In
           </button>
           <button
             type="button"
-            className="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            className="rounded-md border border-border px-3 py-2 text-sm font-semibold  shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
           >
             Log In
           </button>
