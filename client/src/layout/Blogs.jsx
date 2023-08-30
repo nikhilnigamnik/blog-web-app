@@ -1,10 +1,13 @@
 import React from "react";
 import Search from "../components/Search";
 import Filter from "../components/Filter";
+import { useSelector } from "react-redux";
 
 const Blogs = () => {
+  const data = useSelector((state) => state.apiData);
   return (
     <div className="p-4  rounded-md flex flex-col gap-4 bg-primary  border ">
+      {/* <p>}</p> */}
       <div className="flex items-center justify-between">
         <Search/>
         <Filter/>
