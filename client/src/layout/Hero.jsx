@@ -5,9 +5,9 @@ import RightBar from "./RightBar";
 
 const Hero = () => {
   return (
-    <div className="flex justify-between overflow-hidden gap-6 grids">
-      <div className="hidden lg:block">
-      <LeftBar />
+    <div className="grids">
+      <div className="lg:block hidden">
+        <LeftBar />
       </div>
       <div>
         <Blogs />

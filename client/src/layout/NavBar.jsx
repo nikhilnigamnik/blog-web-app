@@ -37,7 +37,7 @@ export function NavBar() {
   };
 
   return (
-    <div className="top-0 right-0 left-0 text-white w-full fixed  py-3 bg-primary border-b border-border z-10 backdrop-blur-xl">
+    <nav className="sticky left-0 top-0 z-40 w-full border-b border-border-light bg-white dark:border-border dark:bg-primary">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <span className="font-bold ">NEBULA</span>
@@ -127,6 +127,6 @@ export function NavBar() {
           </div>
         )}
       </div>
-    </div>
+    </nav>
   );
 }

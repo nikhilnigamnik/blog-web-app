@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <div className="w-[90%] m-auto mt-24">
+      <div className="w-11/12 m-auto mt-6">
         <Outlet />
       </div>
     </>
