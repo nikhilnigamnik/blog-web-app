@@ -1,8 +1,14 @@
 import React from "react";
+import Search from "../components/Search";
+import Filter from "../components/Filter";
 
 const Blogs = () => {
   return (
     <div className="p-4  rounded-md flex flex-col gap-4 bg-primary  border ">
+      <div className="flex items-center justify-between">
+        <Search/>
+        <Filter/>
+      </div>
       <img
         className="rounded-md"
         src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg"

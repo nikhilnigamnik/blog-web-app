@@ -11,6 +11,10 @@ const Hero = () => {
       </div>
       <div>
         <Blogs />
+        <Blogs />
+        <Blogs />
+        <Blogs />
+        <Blogs />
       </div>
       <div>
         <RightBar />

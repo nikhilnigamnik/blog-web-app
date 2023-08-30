@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 const RightBar = () => {
   return (
-    <div className="flex flex-col gap-4  rounded-md bg-primary  border ">
+    <div className="flex flex-col gap-4 overflow-hidden rounded-md bg-primary  border ">
       <div className="flex gap-4 border-b border-border p-4">
         <img
           className="rounded-md"

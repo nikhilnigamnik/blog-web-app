@@ -16,6 +16,96 @@ const LeftBar = () => {
           <h1>Tags</h1>
         </div>
       </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <BsBookmarkHeart />
+          <h1>Bookmark</h1>
+        </div>
+        <div className="flex items-center gap-4">
+          <CiHashtag />
+          <h1>Tags</h1>
+        </div>
+      </div>
     </div>
   );
 };
