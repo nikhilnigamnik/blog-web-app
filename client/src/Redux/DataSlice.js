@@ -1,6 +1,7 @@
+
 import { createSlice } from "@reduxjs/toolkit";
 
-const DataSlice = createSlice({
+const dataSlice = createSlice({
   name: "apiData",
   initialState: [],
   reducers: {
@@ -13,5 +14,6 @@ const DataSlice = createSlice({
   },
 });
 
-export const { setData, addBlogPost } = DataSlice.actions;
-export default DataSlice.reducer;
+export const { setData, addBlogPost } = dataSlice.actions;
+export default dataSlice.reducer;
+

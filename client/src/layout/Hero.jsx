@@ -2,7 +2,6 @@ import React from "react";
 import LeftBar from "./LeftBar";
 import Blogs from "./Blogs";
 import RightBar from "./RightBar";
-
 const Hero = () => {
   return (
     <div className="grids">
@@ -11,10 +10,7 @@ const Hero = () => {
       </div>
       <div>
         <Blogs />
-        <Blogs />
-        <Blogs />
-        <Blogs />
-        <Blogs />
+        
       </div>
       <div>
         <RightBar />

@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 import ErrorElement from "./components/ErrorElement.jsx";
 import UserProfile from "./pages/UserProfile.jsx";
+import BlogDeatils from "./pages/BlogDeatils.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <UserProfile />,
+        element: <BlogDeatils />,
       },
     ],
   },

@@ -6,7 +6,6 @@ import Button from "../components/Button";
 import { Input } from "../components/Inputs";
 const CreateBlog = () => {
   const user = useSelector((state) => state.auth.user);
-  console.log(user._id);
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     title: "",
