@@ -5,11 +5,11 @@ const cloudinary = require("cloudinary").v2;
 
 // cloudinary config
 
-cloudinary.config({
-  cloud_name: "dtmp7op6k",
-  api_key: "989387644814239",
-  api_secret: "IYVOamSGXPxz0C0iulGleE0axr4",
-});
+// cloudinary.config({
+//   cloud_name: "dtmp7op6k",
+//   api_key: "989387644814239",
+//   api_secret: "IYVOamSGXPxz0C0iulGleE0axr4",
+// });
 
 // get blogs
 
@@ -41,58 +41,102 @@ exports.getBlogs = async (req, res) => {
 
 // create blog
 
+// exports.createBlog = async (req, res) => {
+//   try {
+//     const { title, description, image, slug, user } = req.body;
+//     if (!title || !description || !image || !slug || !user) {
+//       return res.status(400).send({
+//         success: false,
+//         message: "All fields are required",
+//       });
+//     }
+
+//     const checkExistingUser = await userModel.findById(user);
+
+//     if (!checkExistingUser) {
+//       return res.status(400).send({
+//         success: false,
+//         message: "User not found",
+//       });
+//     }
+
+//     // upload image to cloudinary
+
+//     const cloudinaryUpload = await cloudinary.uploader.upload(image, {
+//       folder: "blogApp",
+//     });
+
+//     const createBlog = new blogModel({
+//       title,
+//       description,
+//       image: cloudinaryUpload.secure_url,
+//       slug,
+//       user,
+//     });
+
+//     const session = await mongoose.startSession();
+//     session.startTransaction();
+//     await createBlog.save({ session });
+//     checkExistingUser.blogs.push(createBlog);
+//     await checkExistingUser.save({ session });
+//     await session.commitTransaction();
+//     await createBlog.save();
+
+//     return res.status(200).send({
+//       success: true,
+//       message: "Blog created successfully",
+//       createBlog,
+//     });
+//   } catch (error) {
+//     console.log(error);
+
+//     return res.status(500).send({
+//       success: false,
+//       message: "Blog not created",
+//       error,
+//     });
+//   }
+// };
+
+// create blog
+
 exports.createBlog = async (req, res) => {
   try {
-    const { title, description, image, slug, user } = req.body;
-    if (!title || !description || !image || !slug || !user) {
+    const { title, description, image, user } = req.body;
+    //validation
+    if (!title || !description || !image || !user) {
       return res.status(400).send({
         success: false,
-        message: "All fields are required",
+        message: "Please Provide All Fields",
+      });
+    }
+    const exisitingUser = await userModel.findById(user);
+    //validaton
+    if (!exisitingUser) {
+      return res.status(404).send({
+        success: false,
+        message: "unable to find user",
       });
     }
 
-    const checkExistingUser = await userModel.findById(user);
-
-    if (!checkExistingUser) {
-      return res.status(400).send({
-        success: false,
-        message: "User not found",
-      });
-    }
-
-    // upload image to cloudinary
-
-    const cloudinaryUpload = await cloudinary.uploader.upload(image, {
-      folder: "blogApp",
-    });
-
-    const createBlog = new blogModel({
-      title,
-      description,
-      image: cloudinaryUpload.secure_url,
-      slug,
-      user,
-    });
-
+    const newBlog = new blogModel({ title, description, image, user });
     const session = await mongoose.startSession();
     session.startTransaction();
-    await createBlog.save({ session });
-    checkExistingUser.blogs.push(createBlog);
-    await checkExistingUser.save({ session });
+    await newBlog.save({ session });
+    exisitingUser.blogs.push(newBlog);
+    await exisitingUser.save({ session });
     await session.commitTransaction();
-    await createBlog.save();
-
-    return res.status(200).send({
+    await newBlog.save();
+    return res.status(201).send({
       success: true,
-      message: "Blog created successfully",
-      createBlog,
+      message: "Blog Created!",
+      newBlog,
     });
   } catch (error) {
     console.log(error);
-
-    return res.status(500).send({
+    return res.status(400).send({
       success: false,
-      message: "Blog not created",
+      message: "Error WHile Creting blog",
       error,
     });
   }

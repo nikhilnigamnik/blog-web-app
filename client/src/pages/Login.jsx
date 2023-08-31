@@ -36,13 +36,14 @@ const Login = () => {
       if (response.data.success) {
         const { user, token } = response.data;
         dispatch(login({ user, token }));
-        localStorage.setItem("userId", user._id);
         navigate("/");
       }
     } catch (error) {
       console.error(error);
     }
   };
+
+  
   return (
     <form>
       <h2>Login</h2>

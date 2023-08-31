@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import Button from "../components/Button";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import { PiUserCircle } from "react-icons/pi";
+import { CiBellOn } from "react-icons/ci";
+import { BsBezier } from "react-icons/bs";
 
 const menuItems = [
   {
@@ -33,14 +35,13 @@ const menuItems = [
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const user = useSelector((state) => state.auth.user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="sticky left-0 top-0 z-40 w-full border-b border-border-light bg-white dark:border-border dark:bg-primary py-2">
+    <nav className="sticky left-0 top-0 z-40 w-full border-b border-border-light bg-white dark:border-border dark:bg-primary py-4">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <NavLink to={"/"}>
@@ -61,27 +62,27 @@ export function NavBar() {
             ))}
           </ul>
         </div>
-        <div>{user ? <p>{user.name}</p> : <p>Not Logged In</p>}</div>
-        <div className="hidden space-x-2 lg:block">
-          <NavLink to={"signup"}>
-            <button
-              type="button"
-              className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            >
-              Sign In
-            </button>
-          </NavLink>
-          <NavLink to={"login"}>
-            <button
-              type="button"
-              className="rounded-md border border-border px-3 py-2 text-sm font-semibold  shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            >
-              Log In
-            </button>
-          </NavLink>
-        </div>
-        <div className="lg:hidden">
-          <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4">
+            <BsBezier
+              className="hover:border border-border cursor-pointer rounded-full "
+              size={24}
+            />
+            <CiBellOn
+              className="hover:border border-border cursor-pointer rounded-full "
+              size={24}
+            />
+            <Link to={"/user"}>
+              <PiUserCircle
+                className="hover:border border-border cursor-pointer rounded-full "
+                size={24}
+              />
+            </Link>
+          </div>
+          <Menu
+            onClick={toggleMenu}
+            className="h-6 w-6 cursor-pointer lg:hidden"
+          />
         </div>
         {isMenuOpen && (
           <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform px-2 transition lg:hidden py-4">

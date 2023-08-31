@@ -1,24 +1,40 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addBlogPost } from "../Redux/DataSlice";
+import { BsCloudUpload } from "react-icons/bs";
 
 const NewBlog = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null); 
   const [slug, setSlug] = useState("");
+
+  const uploadImage = (e) => {
+    const file = e.target.files[0];
+    setImage(file); 
+  };
+
+  const user = useSelector((state) => state.auth.user);
+  console.log(user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/blog/createBlog", {
-        title: title,  
-        description: description,
-        image: image,
-        slug: slug,
-      });
-      if (data?.success) {
-        
-      }
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("image", image);
+      formData.append("slug", slug);
+      formData.append("user", user._id);
+
+      const { data } = await axios.post(
+        "http://localhost:8000/api/blog/createBlog",
+        formData
+      );
+
+      dispatch(addBlogPost(data));
     } catch (error) {
       console.log(error);
     }
@@ -39,12 +55,30 @@ const NewBlog = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="Image URL"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
+        <label htmlFor="image">
+          Image
+          <div className="flex items-center justify-center w-full h-40 border  rounded-lg cursor-pointer bg-slate-200">
+            {image ? ( // Use 'image' state here
+              <img
+                src={URL.createObjectURL(image)} // Use 'image' state here
+                alt="product"
+                className="h-full "
+              />
+            ) : (
+              <span className="text-5xl">
+                <BsCloudUpload />
+              </span>
+            )}
+
+            <input
+              type={"file"}
+              accept="image/*"
+              id="image"
+              onChange={uploadImage}
+              className="hidden"
+            />
+          </div>
+        </label>
         <input
           type="text"
           placeholder="Slug"

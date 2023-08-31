@@ -14,10 +14,10 @@ const blogSchema = new mongoose.Schema(
       type: String,
       required: [true, "Image is required"],
     },
-    slug: {
-      type: String,
-      required: [true, "Slug is required"],
-    },
+    // slug: {
+    //   type: String,
+    //   required: [true, "Slug is required"],
+    // },
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
@@ -26,7 +26,6 @@ const blogSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
 
 const blogModel = mongoose.model("Blog", blogSchema);
 

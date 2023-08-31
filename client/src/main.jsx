@@ -9,12 +9,16 @@ import { Provider } from "react-redux";
 import NewBlog from "./pages/NewBlog.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import SignupPage from "./pages/SignupPage.jsx";
+import ErrorElement from "./components/ErrorElement.jsx";
+import UserProfile from "./pages/UserProfile.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <div>404</div>,
+    errorElement: <ErrorElement />,
     children: [
       {
         path: "/",
@@ -30,7 +34,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <Signup />,
+        element: <SignupPage />,
+      },
+      {
+        path: "/user",
+        element: <UserProfile />,
+      },
+      {
+        path: "/blog/:id",
+        element: <UserProfile />,
       },
     ],
   },
