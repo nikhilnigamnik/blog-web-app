@@ -8,28 +8,34 @@ import { BsBezier } from "react-icons/bs";
 
 const menuItems = [
   {
+    id: 1,
     name: "Home",
-    href: "#",
+    to: "#",
   },
   {
+    id: 2,
     name: "Trending",
-    href: "#",
+    to: "#",
   },
   {
+    id: 3,
     name: "Blog",
-    href: "#",
+    to: "#",
   },
   {
+    id: 4,
     name: "Explore",
-    href: "#",
+    to: "#",
   },
   {
+    id: 5,
     name: "About",
-    href: "#",
+    to: "/about",
   },
   {
+    id: 6,
     name: "Contact",
-    href: "#",
+    to: "/contact",
   },
 ];
 
@@ -50,15 +56,14 @@ export function NavBar() {
         </div>
         <div className="hidden md:block">
           <ul className="flex justify-between gap-8">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  className="inline-flex items-center text-sm font-semibold  hover:text-gray-300"
-                >
-                  {item.name}
-                </a>
-              </li>
+            {menuItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.to}
+                className="inline-flex items-center text-sm font-semibold  hover:text-gray-300"
+              >
+                {item.name}
+              </Link>
             ))}
           </ul>
         </div>

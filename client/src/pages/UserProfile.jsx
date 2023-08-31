@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import NewBlog from "./NewBlog";
 import PostBlog from "./PostBlog";
+import ErrorProfile from "../components/ErrorProfile";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.auth.user);
@@ -14,14 +15,7 @@ const UserProfile = () => {
   };
 
   if (!user) {
-    return (
-      <div>
-        Please Login to see Profile
-        <Link to={"/login"}>
-          <Button>Login</Button>
-        </Link>
-      </div>
-    );
+    return <ErrorProfile />;
   }
   return (
     <section>
