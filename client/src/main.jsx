@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Hero from "./layout/Hero.jsx";
 import store from "./Redux/store.js";
 import { Provider } from "react-redux";
+import NewBlog from "./pages/NewBlog.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Hero />,
+      },
+      {
+        path: "/newblog",
+        element: <NewBlog />,
       },
     ],
   },

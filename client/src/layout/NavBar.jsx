@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import Button from "../components/Button";
+import { NavLink } from "react-router-dom";
 
 const menuItems = [
   {
@@ -40,7 +41,9 @@ export function NavBar() {
     <nav className="sticky left-0 top-0 z-40 w-full border-b border-border-light bg-white dark:border-border dark:bg-primary py-2">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
-          <span className="font-bold ">NEBULA</span>
+          <NavLink to={"/"}>
+            <span className="font-bold ">NEBULA</span>
+          </NavLink>
         </div>
         <div className="hidden md:block">
           <ul className="flex justify-between gap-8">

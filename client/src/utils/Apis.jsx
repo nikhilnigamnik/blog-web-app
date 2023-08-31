@@ -3,13 +3,15 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setData } from "../Redux/DataSlice";
 
+export const apiUrl = "https://localhost:8000";
+
 const ApiHandler = () => {
   const [responseData, setResponseData] = useState([]);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const apiUrl = "https://localhost:4000";
+    const apiUrl = "https://localhost:8000";
 
     axios
       .get(apiUrl)
