@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import Button from "../components/Button";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const menuItems = [
   {
@@ -32,6 +33,7 @@ const menuItems = [
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const user = useSelector((state) => state.auth.user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -59,19 +61,24 @@ export function NavBar() {
             ))}
           </ul>
         </div>
+        <div>{user ? <p>{user.name}</p> : <p>Not Logged In</p>}</div>
         <div className="hidden space-x-2 lg:block">
-          <button
-            type="button"
-            className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-          >
-            Sign In
-          </button>
-          <button
-            type="button"
-            className="rounded-md border border-border px-3 py-2 text-sm font-semibold  shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-          >
-            Log In
-          </button>
+          <NavLink to={"signup"}>
+            <button
+              type="button"
+              className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            >
+              Sign In
+            </button>
+          </NavLink>
+          <NavLink to={"login"}>
+            <button
+              type="button"
+              className="rounded-md border border-border px-3 py-2 text-sm font-semibold  shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            >
+              Log In
+            </button>
+          </NavLink>
         </div>
         <div className="lg:hidden">
           <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />

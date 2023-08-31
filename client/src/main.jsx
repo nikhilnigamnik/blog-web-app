@@ -7,6 +7,8 @@ import Hero from "./layout/Hero.jsx";
 import store from "./Redux/store.js";
 import { Provider } from "react-redux";
 import NewBlog from "./pages/NewBlog.jsx";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: "/newblog",
         element: <NewBlog />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },

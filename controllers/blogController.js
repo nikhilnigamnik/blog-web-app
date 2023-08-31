@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 const blogModel = require("../models/blogModel");
 const userModel = require("../models/userModel");
+const cloudinary = require("cloudinary").v2;
+
+// cloudinary config
+
+cloudinary.config({
+  cloud_name: "dtmp7op6k",
+  api_key: "989387644814239",
+  api_secret: "IYVOamSGXPxz0C0iulGleE0axr4",
+});
 
 // get blogs
 
@@ -51,7 +60,19 @@ exports.createBlog = async (req, res) => {
       });
     }
 
-    const createBlog = new blogModel({ title, description, image, slug, user });
+    // upload image to cloudinary
+
+    const cloudinaryUpload = await cloudinary.uploader.upload(image, {
+      folder: "blogApp",
+    });
+
+    const createBlog = new blogModel({
+      title,
+      description,
+      image: cloudinaryUpload.secure_url,
+      slug,
+      user,
+    });
 
     const session = await mongoose.startSession();
     session.startTransaction();
