@@ -161,28 +161,27 @@ exports.deleteBlog = async (req, res) => {
 
 // get blog by user created
 
-exports.getBlogByUser = async (req, res) => {
+exports.userBlogControlller = async (req, res) => {
   try {
     const userBlog = await userModel.findById(req.params.id).populate("blogs");
 
     if (!userBlog) {
-      return res.status(400).send({
+      return res.status(404).send({
         success: false,
-        message: "blog not found",
+        message: "blogs not found with this id",
       });
     }
-
-    return res.status(200).sen({
+    return res.status(200).send({
       success: true,
-      message: "blog found",
+      message: "user blogs",
       userBlog,
     });
   } catch (error) {
     console.log(error);
-
     return res.status(400).send({
       success: false,
-      message: "blog not found",
+      message: "error in user blog",
+      error,
     });
   }
 };

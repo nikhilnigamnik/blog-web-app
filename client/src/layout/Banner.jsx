@@ -10,7 +10,7 @@ const Banner = () => {
         <Filter />
       </div>
       <div>
-        <h1>sjkbcavscu</h1>
+        <h1 className=" text-2xl font-bold text-gray-200 md:text-2xl md:leading-10">Latest news from our blog</h1>
       </div>
     </div>
   );
