@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../components/Inputs";
 import Button from "../components/Button";
+import { apiUrl } from "../utils/Api";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/user/register",
+        `${apiUrl}/api/user/register`,
         formData
       );
       if (response.data.success) {

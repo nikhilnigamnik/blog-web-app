@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Button from "../components/Button";
 import { Input } from "../components/Inputs";
+import { apiUrl } from "../utils/Api";
 const CreateBlog = () => {
   const user = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const CreateBlog = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/blog/createBlog",
+        `${apiUrl}/api/blog/createBlog`,
         {
           title: inputs.title,
           description: inputs.description,

@@ -1,10 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Input } from "../components/Inputs";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { login } from "../Redux/authSlice";
+import { useDispatch } from "react-redux";
+import { apiUrl } from "../utils/Api";
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [user, setUser] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${apiUrl}/api/user/login`, formData);
+      if (response.data.success) {
+        const { user, token } = response.data;
+        dispatch(login({ user, token }));
+        navigate("/");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <section>
       <div className="flex items-center justify-center px-4  sm:px-6  lg:px-8">
@@ -33,7 +69,12 @@ const LoginPage = () => {
                   Email address{" "}
                 </label>
                 <div className="mt-2">
-                  <Input type="email" placeholder="Email"></Input>
+                  <Input
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
               <div>
@@ -52,11 +93,17 @@ const LoginPage = () => {
                   </a>
                 </div>
                 <div className="mt-2">
-                  <Input type="password" placeholder="Password"></Input>
+                  <Input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
               <div>
                 <Button
+                  onClick={handleLogin}
                   type="button"
                   className="inline-flex w-full items-center justify-center rounded-md px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                 >

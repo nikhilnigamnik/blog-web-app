@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0f172a",
+        primary: "rgb(2 6 23 / 0.7)",
         "light-bg": "#f8fafc",
         "primary-light": "#1e293b",
         green: "#22C55E",
         secondary: "#2563eb",
         yellow: "#facc15",
-        border: "#2c3646",
+        border: "#1e293bcc",
         "border-light": "#d4d7dacc",
         "text-primary": "#94a3b8",
         "text-secondary": "#e2e8f0",

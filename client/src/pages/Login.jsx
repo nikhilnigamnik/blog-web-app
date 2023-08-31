@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../Redux/authSlice";
 import Button from "../components/Button";
 import { Input } from "../components/Inputs";
+import { apiUrl } from "../utils/Api";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -29,10 +30,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/user/login",
-        formData
-      );
+      const response = await axios.post(`${apiUrl}/api/user/login`, formData);
       if (response.data.success) {
         const { user, token } = response.data;
         dispatch(login({ user, token }));
@@ -43,7 +41,6 @@ const Login = () => {
     }
   };
 
-  
   return (
     <form>
       <h2>Login</h2>

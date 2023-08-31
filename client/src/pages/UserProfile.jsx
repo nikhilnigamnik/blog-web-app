@@ -20,7 +20,6 @@ const UserProfile = () => {
         <Link to={"/login"}>
           <Button>Login</Button>
         </Link>
-        
       </div>
     );
   }
@@ -32,7 +31,7 @@ const UserProfile = () => {
       <p>Reset Password</p>
       <div>Your Blogs</div>
       <button onClick={logOutUser}>Logout</button>
-      <PostBlog/>
+      <PostBlog />
     </section>
   );
 };

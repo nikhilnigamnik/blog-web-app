@@ -3,17 +3,18 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addBlogPost } from "../Redux/DataSlice";
 import { BsCloudUpload } from "react-icons/bs";
+import { apiUrl } from "../utils/Api";
 
 const NewBlog = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null); 
+  const [image, setImage] = useState(null);
   const [slug, setSlug] = useState("");
 
   const uploadImage = (e) => {
     const file = e.target.files[0];
-    setImage(file); 
+    setImage(file);
   };
 
   const user = useSelector((state) => state.auth.user);
@@ -30,7 +31,7 @@ const NewBlog = () => {
       formData.append("user", user._id);
 
       const { data } = await axios.post(
-        "http://localhost:8000/api/blog/createBlog",
+        `${apiUrl}/api/blog/createBlog`,
         formData
       );
 

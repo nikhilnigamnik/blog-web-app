@@ -4,15 +4,15 @@ import { NavBar } from "./layout/NavBar";
 import { useDispatch } from "react-redux";
 import { setData } from "./Redux/DataSlice";
 import axios from "axios";
+import { apiUrl } from "./utils/Api";
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const apiUrl = "http://localhost:8000/api/blog/blogs";
-
+    const Url = `${apiUrl}/api/blog/blogs`;
     axios
-      .get(apiUrl)
+      .get(Url)
       .then((response) => {
         dispatch(setData(response.data.blogs));
       })
