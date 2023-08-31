@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { NavBar } from "./layout/NavBar";
 import { useDispatch, useSelector } from "react-redux";
-import { setData} from "./Redux/DataSlice";
+import { setData } from "./Redux/DataSlice";
 import axios from "axios";
-import { apiUrl, userBlogUrl } from "./utils/Api";
+import { apiUrl } from "./utils/Api";
 import Footer from "./pages/Footer";
-import { setUserBlog } from "./Redux/userBlogSlice";
+
 
 const App = () => {
   const user = useSelector((state) => state.auth.user);
@@ -20,20 +20,6 @@ const App = () => {
       .get(Url)
       .then((response) => {
         dispatch(setData(response.data.blogs));
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-  // User Blogs
-
-  useEffect(() => {
-    const Url = `${userBlogUrl}/${user._id}`;
-    axios
-      .get(Url)
-      .then((response) => {
-        dispatch(setUserBlog(response?.data?.userBlog?.blogs));
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
