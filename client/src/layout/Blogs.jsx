@@ -21,7 +21,7 @@ const Blogs = () => {
   return data.length == 0 ? (
     <div>Loading</div>
   ) : (
-    <div className="p-4  rounded-md flex flex-col gap-4 bg-primary  border ">
+    <div className="p-4  rounded-xl flex flex-col gap-4 bg-primary  border ">
       {data.map((blog) => (
         <BlogData
           key={blog._id}

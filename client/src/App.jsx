@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setData } from "./Redux/DataSlice";
 import axios from "axios";
 import { apiUrl } from "./utils/Api";
+import Footer from "./pages/Footer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const App = () => {
       <div className="w-[98%] m-auto mt-4">
         <Outlet />
       </div>
+      <Footer />
     </>
   );
 };

@@ -4,7 +4,7 @@ import Filter from "../components/Filter";
 
 const Banner = () => {
   return (
-    <div className="bg-primary rounded-md p-4 mb-3  border">
+    <div className="bg-primary rounded-xl p-4 mb-3  border">
       <div className="flex justify-between items-center">
         <Search />
         <Filter />
