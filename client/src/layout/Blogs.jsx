@@ -6,9 +6,12 @@ import { Link } from "react-router-dom";
 
 const BlogData = ({ title, image, description, id }) => {
   return (
-    <Link to={`/blog/${description}`}>
-      <div>
-        <img src={image} alt="images" />
+    <Link to={`/blog/${id}`}>
+      <div className="flex">
+        <div>
+          <img className="rounded-md" src={image} alt="images" />
+        </div>
+
         <p>{title}</p>
         <p>{description}</p>
       </div>
