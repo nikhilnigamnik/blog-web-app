@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { NavBar } from "./layout/NavBar";
 import { useDispatch, useSelector } from "react-redux";
-import { setData } from "./Redux/DataSlice";
 import axios from "axios";
 import { apiUrl } from "./utils/Api";
-import Footer from "./pages/Footer";
+import Footer from "./layout/Footer";
+import { setData } from "./Redux/Slices/dataSlice";
 
 
 const App = () => {

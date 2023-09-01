@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import DataSlice from "./DataSlice";
-import { authReducer } from "./authSlice";
-import userBlogSlice from "./userBlogSlice";
+import dataSlice from "./Slices/dataSlice";
+import userBlogSlice from "./Slices/userBlogSlice";
+import { authReducer } from "./Slices/authSlice";
+
 
 const store = configureStore({
   reducer: {
-    apiData: DataSlice,
+    apiData: dataSlice,
     userBlog: userBlogSlice,
     auth: authReducer,
   },

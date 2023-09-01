@@ -4,9 +4,10 @@ import { Input } from "../components/Inputs";
 import Button from "../components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { login } from "../Redux/authSlice";
+
 import { useDispatch } from "react-redux";
 import { apiUrl } from "../utils/Api";
+import { login } from "../Redux/Slices/authSlice";
 
 const LoginPage = () => {
   const dispatch = useDispatch();

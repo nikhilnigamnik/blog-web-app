@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { addBlogPost } from "../Redux/DataSlice";
+
 import { BsCloudUpload } from "react-icons/bs";
 import { apiUrl } from "../utils/Api";
+import { addBlogPost } from "../Redux/Slices/dataSlice";
 
 const NewBlog = () => {
   const dispatch = useDispatch();

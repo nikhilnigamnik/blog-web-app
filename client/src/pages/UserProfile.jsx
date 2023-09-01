@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../Redux/authSlice";
+import { logout } from "../Redux/Slices/authSlice";
 import Button from "../components/Button";
 import PostBlog from "./PostBlog";
 import ErrorProfile from "../components/ErrorProfile";
 import { userBlogUrl } from "../utils/Api";
-import { setUserBlog } from "../Redux/userBlogSlice";
+import { setUserBlog } from "../Redux/Slices/userBlogSlice";
 import axios from "axios";
 
 const UserProfile = () => {

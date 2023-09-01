@@ -6,7 +6,6 @@ const BlogDeatils = () => {
   const { id } = useParams();
   const blogDeatail = useSelector((state) => state.apiData);
   const blogData = blogDeatail.find((blog) => blog._id === id);
-  console.log(blogData);
 
   if (!blogData) {
     return <div>Loading...</div>;
