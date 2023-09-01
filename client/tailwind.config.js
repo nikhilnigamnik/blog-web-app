@@ -12,7 +12,7 @@ export default {
         yellow: "#facc15",
         border: "#1e293bcc",
         "border-light": "#d4d7dacc",
-        "text-primary": "#94a3b8",
+        "text-primary": "#d1d5db",
         "text-secondary": "#e2e8f0",
         red: "#dc2626",
         twitterColor: "#1da1f2",

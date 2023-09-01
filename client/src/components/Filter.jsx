@@ -32,7 +32,7 @@ const Filter = () => {
         <span>Filter</span>
       </div>
       {showFilter && (
-        <div className="absolute flex flex-col gap-2 bg-primary px-4 py-2 right-0 border rounded-md">
+        <div className="absolute flex flex-col gap-2 bg-primary backdrop-blur-3xl px-4 py-2 right-0 border rounded-md">
           <p className="border-b border-b-border">Development</p>
           <p className="border-b border-b-border">Development</p>
           <p className="border-b border-b-border">Development</p>

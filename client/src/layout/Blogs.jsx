@@ -148,49 +148,88 @@ const posts = [
 
 const Blogs = () => {
   return (
-    <div className="grid gap-6 gap-y-10 grid-cols-1 py-6  lg:grid-cols-2">
-      {posts.map((post) => (
-        <div
-          key={post.title}
-          className="border rounded-xl p-2 flex flex-col justify-between"
-        >
-          <img
-            src={post.poster}
-            className="aspect-video w-full rounded-md"
-            alt="blogImage"
-          />
-          <div className="min-h-min p-3">
-            <p className="mt-4 w-full text-xs font-semibold leading-tight">
-              #{post.category}
-            </p>
-            <Link to={"/"}>
-              <p className="mt-4 flex-1 text-base font-semibold ">
-                {post.title}
+    <>
+      <div className="grid gap-6 gap-y-10 grid-cols-1 py-6  lg:grid-cols-2">
+        {posts.map((post) => (
+          <div
+            key={post.title}
+            className="border rounded-xl p-2 flex flex-col justify-between"
+          >
+            <img
+              src={post.poster}
+              className="aspect-video w-full rounded-md"
+              alt="blogImage"
+            />
+            <div className="min-h-min p-3">
+              <p className="mt-4 w-full text-xs font-semibold leading-tight">
+                #{post.category}
               </p>
-            </Link>
-            <p className="mt-4 w-full text-sm leading-normal text-gray-400">
-              {post.description}
-            </p>
-            <div className="mt-4 flex space-x-3 ">
-              <img
-                className="h-full w-10 rounded-lg"
-                src={post.avatar}
-                alt={post.author}
-              />
-              <div>
-                <p className="text-sm font-semibold leading-tight text-gray-300">
-                  {post.author}
-                  <span></span>
+              <Link to={"/"}>
+                <p className="mt-4 flex-1 text-base font-semibold ">
+                  {post.title}
                 </p>
-                <p className="text-sm leading-tight text-gray-300">
-                  {post.date}
-                </p>
+              </Link>
+              <p className="mt-4 w-full text-sm leading-normal text-gray-400">
+                {post.description}
+              </p>
+              <div className="mt-4 flex space-x-3 ">
+                <img
+                  className="h-full w-10 rounded-lg"
+                  src={post.avatar}
+                  alt={post.author}
+                />
+                <div>
+                  <p className="text-sm font-semibold leading-tight text-gray-300">
+                    {post.author}
+                    <span></span>
+                  </p>
+                  <p className="text-sm leading-tight text-gray-300">
+                    {post.date}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <div className="flex items-center justify-center pt-6">
+        <a
+          href="#"
+          className="mx-1 cursor-not-allowed text-sm font-semibold text-text-primary"
+        >
+          <span className="hidden lg:block">&larr; Previous</span>
+          <span className="block lg:hidden">&larr;</span>
+        </a>
+        <a
+          href="#"
+          className="mx-1 flex items-center rounded-md border  px-3 py-1 text-text-primary hover:scale-105"
+        >
+          1
+        </a>
+        <a
+          href="#"
+          className="mx-1 flex items-center rounded-md border  px-3 py-1 text-text-primaryhover:scale-105"
+        >
+          2
+        </a>
+        <a
+          href="#"
+          className="mx-1 flex items-center rounded-md border text-text-primary px-3 py-1 hover:scale-105"
+        >
+          3
+        </a>
+        <a
+          href="#"
+          className="mx-1 flex items-center rounded-md border  px-3 py-1 text-text-primary hover:scale-105"
+        >
+          4
+        </a>
+        <a href="#" className="mx-2 text-sm font-semibold text-text-primary">
+          <span className="hidden lg:block">Next &rarr;</span>
+          <span className="block lg:hidden">&rarr;</span>
+        </a>
+      </div>
+    </>
   );
 };
 
