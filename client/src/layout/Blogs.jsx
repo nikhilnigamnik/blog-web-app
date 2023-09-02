@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "../components/Search";
-import Filter from "../components/Filter";
+// import Filter from "../components/Filter";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";

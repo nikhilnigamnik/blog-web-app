@@ -10,7 +10,6 @@ import { setData } from "./Redux/Slices/dataSlice";
 
 const App = () => {
   const user = useSelector((state) => state.auth.user);
-
   // All Blogs
   const dispatch = useDispatch();
 
@@ -33,6 +32,7 @@ const App = () => {
         <Outlet />
       </div>
       <Footer />
+      
     </>
   );
 };
