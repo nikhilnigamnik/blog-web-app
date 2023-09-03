@@ -2,7 +2,8 @@ import React from "react";
 
 const RecentBlogs = () => {
   return (
-    <div className="w-full px-4 lg:w-1/2">
+    <div className=" px-4 p-4 rounded-xl border lg:block hidden h-min">
+      <h1 className="text-center mb-4">Recent Blogs</h1>
       <a className="group mb-8 md:flex" href="#">
         <img
           className="h-40 w-48 rounded-lg"
@@ -11,7 +12,7 @@ const RecentBlogs = () => {
         />
         <div className="my-4 pt-2 md:ml-6 md:mt-0">
           <span className="mb-2 block text-gray-500">Jul 20, 2022</span>
-          <h4 className="text-xl font-semibold text-gray-900">
+          <h4 className="text-xl font-semibold ">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </h4>
         </div>
@@ -24,7 +25,7 @@ const RecentBlogs = () => {
         />
         <div className="my-4 pt-2 md:ml-6 md:mt-0">
           <span className="mb-2 block text-gray-500">Jul 20, 2022</span>
-          <h4 className="text-xl font-semibold text-gray-900">
+          <h4 className="text-xl font-semibold ">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </h4>
         </div>
@@ -37,7 +38,7 @@ const RecentBlogs = () => {
         />
         <div className="my-4 pt-2 md:ml-6 md:mt-0">
           <span className="mb-2 block text-gray-500">Jul 20, 2022</span>
-          <h4 className="text-xl font-semibold text-gray-900">
+          <h4 className="text-xl font-semibold ">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </h4>
         </div>

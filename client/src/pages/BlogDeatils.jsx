@@ -14,22 +14,17 @@ const BlogDeatils = () => {
   }
 
   return (
-    // <div className="border p-4 rounded-xl flex flex-col justify-center">
-    //   <img className="rounded-md" src={blogData.image} />
-    //   <h2>{blogData.title}</h2>
-    //   <p>{blogData.description}</p>
-    // </div>
-    <section className="relative overflow-hidden py-20">
+    <section className="relative overflow-hidden py-6">
       <div className="relative">
         <div className="mx-auto max-w-xl lg:max-w-7xl">
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <span className="mb-4 inline-block rounded-full bg-gray-50 px-3 py-1 text-xs font-semibold text-black">
+            <span className="mb-4 inline-block rounded-full  px-3 py-1 text-xs font-semibold bg-secondary">
               OUR BLOG
             </span>
             <h1 className="text-5xl font-bold">Latest news from our blog</h1>
           </div>
-          <div className="my-18 -mx-4 flex flex-wrap px-4">
-            <div className="mb-12 w-full px-4 lg:mb-0 lg:w-1/2">
+          <div className="flex justify-between gap-4 px-4">
+            <div className="mb-12 w-full p-4 rounded-xl border ">
               <a className="group block w-full" href="#">
                 <img
                   className="mb-5 block w-full rounded-lg"
@@ -52,14 +47,6 @@ const BlogDeatils = () => {
               </a>
             </div>
             <RecentBlogs />
-          </div>
-          <div className="mt-14 text-center">
-            <Button
-              type="button"
-              className="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            >
-              View All Posts
-            </Button>
           </div>
         </div>
       </div>

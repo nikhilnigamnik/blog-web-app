@@ -14,9 +14,9 @@ const Hero = () => {
         <Banner />
         <Blogs />
       </div>
-      <div>
+    
         <RecentBlogs/>
-      </div>
+     
     </div>
   );
 };
