@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { PrimeReactProvider } from "primereact/api";
 import Hero from "./layout/Hero.jsx";
 import store from "./Redux/store.js";
 import { Provider } from "react-redux";
@@ -15,6 +14,7 @@ import UserProfile from "./pages/UserProfile.jsx";
 import BlogDeatils from "./pages/BlogDeatils.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import About from "./pages/About.jsx";
+import BlogEditor from "./components/BlogEditor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -54,14 +54,16 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+      {
+        path: "/expo",
+        element: <BlogEditor />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <PrimeReactProvider>
-      <RouterProvider router={router} fallbackElement />
-    </PrimeReactProvider>
+    <RouterProvider router={router} fallbackElement />
   </Provider>
 );

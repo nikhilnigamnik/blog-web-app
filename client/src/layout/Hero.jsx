@@ -3,6 +3,7 @@ import LeftBar from "./LeftBar";
 import Blogs from "./Blogs";
 import RightBar from "./RightBar";
 import Banner from "./Banner";
+import RecentBlogs from "../components/RecentBlogs";
 const Hero = () => {
   return (
     <div className="grids">
@@ -14,7 +15,7 @@ const Hero = () => {
         <Blogs />
       </div>
       <div>
-        <RightBar />
+        <RecentBlogs/>
       </div>
     </div>
   );
