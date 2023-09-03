@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 
+
 const BlogData = ({ title, image, description, id }) => {
   return (
     <>
@@ -101,6 +102,8 @@ const Blogs = () => {
         </a>
       </div>
     </div>
+
+    
   );
 };
 
